@@ -1,94 +1,94 @@
 import '../src';
 
-describe('toBeType', () => {
+describe('toEqualType', () => {
   test('match', () => {
-    expect(undefined).toBeType<undefined>();
-    expect(null).toBeType<null>();
-    expect(true).toBeType<boolean>();
-    expect(false).toBeType<boolean>();
-    expect(0).toBeType<number>();
-    expect(-0).toBeType<number>();
-    expect(NaN).toBeType<number>();
-    expect(1).toBeType<number>();
-    expect(1e-5).toBeType<number>();
-    expect('').toBeType<string>();
-    expect('abc').toBeType<string>();
+    expect(undefined).toEqualType<undefined>();
+    expect(null).toEqualType<null>();
+    expect(true).toEqualType<boolean>();
+    expect(false).toEqualType<boolean>();
+    expect(0).toEqualType<number>();
+    expect(-0).toEqualType<number>();
+    expect(NaN).toEqualType<number>();
+    expect(1).toEqualType<number>();
+    expect(1e-5).toEqualType<number>();
+    expect('').toEqualType<string>();
+    expect('abc').toEqualType<string>();
     // 空配列は型アサーションを付けないとnever[]になる
-    expect([]).toBeType<never[]>();
-    expect([undefined]).toBeType<undefined[]>();
-    expect([null]).toBeType<null[]>();
-    expect([true]).toBeType<boolean[]>();
-    expect([false]).toBeType<boolean[]>();
-    expect([0]).toBeType<number[]>();
-    expect([-0]).toBeType<number[]>();
-    expect([NaN]).toBeType<number[]>();
-    expect([1]).toBeType<number[]>();
-    expect([1e-5]).toBeType<number[]>();
-    expect(['']).toBeType<string[]>();
-    expect(['abc']).toBeType<string[]>();
+    expect([]).toEqualType<never[]>();
+    expect([undefined]).toEqualType<undefined[]>();
+    expect([null]).toEqualType<null[]>();
+    expect([true]).toEqualType<boolean[]>();
+    expect([false]).toEqualType<boolean[]>();
+    expect([0]).toEqualType<number[]>();
+    expect([-0]).toEqualType<number[]>();
+    expect([NaN]).toEqualType<number[]>();
+    expect([1]).toEqualType<number[]>();
+    expect([1e-5]).toEqualType<number[]>();
+    expect(['']).toEqualType<string[]>();
+    expect(['abc']).toEqualType<string[]>();
     // 空オブジェクト`{}`をそのまま使うとeslintの警告が出るのでRecord<never, unknown>を使う
-    expect({}).toBeType<Record<never, never>>();
-    expect({ aaa: true }).toBeType<{ aaa: boolean }>();
-    expect(true as const).toBeType<true>();
-    expect(false as const).toBeType<false>();
-    expect(0 as const).toBeType<0>();
-    expect(-0 as const).toBeType<-0>();
-    expect(1 as const).toBeType<1>();
-    expect(1e-5 as const).toBeType<1e-5>();
-    expect('' as const).toBeType<''>();
-    expect('abc' as const).toBeType<'abc'>();
+    expect({}).toEqualType<Record<never, never>>();
+    expect({ aaa: true }).toEqualType<{ aaa: boolean }>();
+    expect(true as const).toEqualType<true>();
+    expect(false as const).toEqualType<false>();
+    expect(0 as const).toEqualType<0>();
+    expect(-0 as const).toEqualType<-0>();
+    expect(1 as const).toEqualType<1>();
+    expect(1e-5 as const).toEqualType<1e-5>();
+    expect('' as const).toEqualType<''>();
+    expect('abc' as const).toEqualType<'abc'>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([] as const).toBeType<[]>();
-    expect([] as const).toBeType<readonly []>();
+    expect([] as const).toEqualType<[]>();
+    expect([] as const).toEqualType<readonly []>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([undefined] as const).toBeType<[undefined]>();
-    expect([undefined] as const).toBeType<readonly [undefined]>();
+    expect([undefined] as const).toEqualType<[undefined]>();
+    expect([undefined] as const).toEqualType<readonly [undefined]>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([null] as const).toBeType<[null]>();
-    expect([null] as const).toBeType<readonly [null]>();
+    expect([null] as const).toEqualType<[null]>();
+    expect([null] as const).toEqualType<readonly [null]>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([true] as const).toBeType<[true]>();
-    expect([true] as const).toBeType<readonly [true]>();
+    expect([true] as const).toEqualType<[true]>();
+    expect([true] as const).toEqualType<readonly [true]>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([false] as const).toBeType<[false]>();
-    expect([false] as const).toBeType<readonly [false]>();
+    expect([false] as const).toEqualType<[false]>();
+    expect([false] as const).toEqualType<readonly [false]>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([0] as const).toBeType<[0]>();
-    expect([0] as const).toBeType<readonly [0]>();
+    expect([0] as const).toEqualType<[0]>();
+    expect([0] as const).toEqualType<readonly [0]>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([-0] as const).toBeType<[-0]>();
-    expect([-0] as const).toBeType<readonly [-0]>();
+    expect([-0] as const).toEqualType<[-0]>();
+    expect([-0] as const).toEqualType<readonly [-0]>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([NaN] as const).toBeType<[number]>();
-    expect([NaN] as const).toBeType<readonly [number]>(); // NaNはリテラル型にならない
+    expect([NaN] as const).toEqualType<[number]>();
+    expect([NaN] as const).toEqualType<readonly [number]>(); // NaNはリテラル型にならない
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([1] as const).toBeType<[1]>();
-    expect([1] as const).toBeType<readonly [1]>();
+    expect([1] as const).toEqualType<[1]>();
+    expect([1] as const).toEqualType<readonly [1]>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([1e-5] as const).toBeType<[1e-5]>();
-    expect([1e-5] as const).toBeType<readonly [1e-5]>();
+    expect([1e-5] as const).toEqualType<[1e-5]>();
+    expect([1e-5] as const).toEqualType<readonly [1e-5]>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect([''] as const).toBeType<['']>();
-    expect([''] as const).toBeType<readonly ['']>();
+    expect([''] as const).toEqualType<['']>();
+    expect([''] as const).toEqualType<readonly ['']>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect(['abc'] as const).toBeType<['abc']>();
-    expect(['abc'] as const).toBeType<readonly ['abc']>();
+    expect(['abc'] as const).toEqualType<['abc']>();
+    expect(['abc'] as const).toEqualType<readonly ['abc']>();
     // プロパティがないのでreadonlyが有ってなくても同じ
-    expect({} as const).toBeType<Record<never, never>>();
-    expect({} as const).toBeType<Readonly<Record<never, never>>>();
+    expect({} as const).toEqualType<Record<never, never>>();
+    expect({} as const).toEqualType<Readonly<Record<never, never>>>();
     // @ts-expect-error as constを付けているのでreadonlyがないとエラー
-    expect({ aaa: true } as const).toBeType<{ aaa: true }>();
-    expect({ aaa: true } as const).toBeType<Readonly<{ aaa: true }>>();
+    expect({ aaa: true } as const).toEqualType<{ aaa: true }>();
+    expect({ aaa: true } as const).toEqualType<Readonly<{ aaa: true }>>();
   });
 
   test('ts-expect-error ', () => {
     // @ts-expect-error などで無理矢理コンパイルが通るようにするとテストは成功してしまう。
-    expect(null).toBeType<undefined>();
+    expect(null).toEqualType<undefined>();
   });
 
   test('.not unsupported', () => {
     expect(() => {
-      expect(null).not.toBeType<null>();
-    }).toThrow('.not.toBeType is unsupported');
+      expect(null).not.toEqualType<null>();
+    }).toThrow('.not.toEqualType is unsupported');
   });
 });

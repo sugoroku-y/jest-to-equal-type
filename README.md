@@ -4,7 +4,7 @@ TypeScriptでの型チェックを行う為だけのマッチャーです。
 
 ```ts
 test('typecheck', () => {
-  expect(func()).toBeType<{aaa: boolean; bbb: number}>();
+  expect(func()).toEqualType<{aaa: boolean; bbb: number}>();
 })
 ```
 

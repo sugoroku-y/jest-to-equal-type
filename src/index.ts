@@ -8,10 +8,10 @@ type Equal<A, B> = (<T>(a: A) => T extends A ? 1 : 2) extends <T>(
   : false;
 
 expect.extend({
-  toBeType: function (this: jest.MatcherContext): jest.CustomMatcherResult {
+  toEqualType: function (this: jest.MatcherContext): jest.CustomMatcherResult {
     if (this.isNot) {
       // このマッチャーの性格上、`.not`は使用不可
-      throw new Error('.not.toBeType is unsupported');
+      throw new Error('.not.toEqualType is unsupported');
     }
     // 目的はTypeScriptでの型チェックなので実際のテストは行わない
     return { pass: true, message: () => '' };
@@ -27,7 +27,7 @@ declare global {
        *
        * 実際のテストは実行しないので、`.not`は使用不可。
        */
-      toBeType<S>(
+      toEqualType<S>(
         ...args: Equal<S, T> extends true
           ? []
           : // SとTが一致しなければエラーになるように実際には引数として指定できない、配列と文字列の交差型にする
