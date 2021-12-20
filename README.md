@@ -1,4 +1,4 @@
-# jest-to-be-type
+# jest-to-equal-type
 
 TypeScriptでの型チェックを行う為だけのマッチャーです。
 
