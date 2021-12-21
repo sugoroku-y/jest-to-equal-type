@@ -2,6 +2,14 @@
 
 TypeScriptでの型チェックを行う為だけのマッチャーです。
 
+使用するにはソースファイルの先頭でimportして下さい。
+
+```ts
+import 'jest-to-equal-type';
+```
+
+するとexpectのマッチャーとしてtoEqualTypeが使えるようになります。
+
 ```ts
 test('typecheck', () => {
   expect(func()).toEqualType<{aaa: boolean; bbb: number}>();
