@@ -2,7 +2,7 @@
 
 TypeScriptでの型チェックを行う為だけのマッチャーです。
 
-使用するにはソースファイルの先頭でimportして下さい。
+使用するにはソースファイルの先頭でimportしてください。
 
 ```ts
 import 'jest-to-equal-type';
