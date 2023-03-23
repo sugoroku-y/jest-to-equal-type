@@ -12,5 +12,9 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
   "typescript.inlayHints.parameterNames.enabled": "all",
-  "typescript.inlayHints.parameterTypes.enabled": true
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.formatOnType": true
 }

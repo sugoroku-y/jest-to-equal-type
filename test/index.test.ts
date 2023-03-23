@@ -81,7 +81,7 @@ describe('toEqualType', () => {
     expect({ aaa: true } as const).toEqualType<Readonly<{ aaa: true }>>();
   });
 
-  test('ts-expect-error ', () => {
+  test('ts-expect-error', () => {
     // @ts-expect-error などで無理矢理コンパイルが通るようにするとテストは成功してしまう。
     expect(null).toEqualType<undefined>();
   });

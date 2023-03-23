@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "target": "ES2018",
+    "module": "commonjs",
     "lib": ["ESNext"],
-    "module": "CommonJS",
-    "declaration": true,
     "outDir": "../",
+    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -26,6 +27,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
+
     "skipLibCheck": true
   },
   "exclude": []

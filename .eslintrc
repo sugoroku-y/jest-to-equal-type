@@ -1,26 +1,46 @@
 {
-    "root": true,
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:prettier/recommended"
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jest/recommended",
+    "plugin:jest/style",
+    "prettier"
+  ],
+  "plugins": [
+    "jest",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "src/tsconfig.json",
+      "test/tsconfig.json"
+    ]
+  },
+  "env": {
+    "jest/globals": true,
+    "es2021": true,
+    "node": true
+  },
+  "rules": {
+    "jest/consistent-test-it": [
+      "error",
+      {
+        "fn": "test"
+      }
     ],
-    "plugins": [
-        "@typescript-eslint"
+    "jest/require-top-level-describe": [
+      "error"
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "project": [
-          "src/tsconfig.json",
-          "test/tsconfig.json"
-        ]
-    },
-    "env": {
-        "es6": true,
-        "node": true
-    },
-    "rules": {
-        "@typescript-eslint/restrict-template-expressions": "off"
-    }
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/restrict-template-expressions": "off"
+  }
 }
