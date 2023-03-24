@@ -8,7 +8,7 @@
     "lint:prettier": "prettier --check ./",
     "lint": "run-p lint:*",
     "prebuild": "npm run lint",
-    "build": "tsc -b ./src/tsconfig.json",
+    "build": "tsc -b src/tsconfig.json",
     "pretest": "npm run build",
     "test": "jest",
     "preversion": "npm test"
