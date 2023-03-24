@@ -1,6 +1,6 @@
 {
   "name": "jest-to-equal-type",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Type Matcher of JEST for TypeScript",
   "license": "MIT",
   "scripts": {
